@@ -1,3 +1,10 @@
+# Version: 1.0.0
+# Revision date: 2026-07-17
+# Author/Generator: GPT-5.6 Sol
+# Last revised by: GPT-5.6 Sol
+# Change history:
+# - 1.0.0 (2026-07-17): Restrict the build matrix to Windows static x86_64.
+
 name: Build
 
 on:
@@ -46,16 +53,9 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-            os: [ubuntu-22.04, ubuntu-24.04, windows-2025-vs2026, macos-14]
-            type: [static, shared]
+            os: [windows-2025-vs2026]
+            type: [static]
             arch: [x86_64]
-            exclude:
-              - os: windows-2025-vs2026
-                type: shared
-              - os: macos-14
-                type: shared
-              - os: ubuntu-22.04
-                type: static
             
     runs-on: ${{ matrix.os }}
 

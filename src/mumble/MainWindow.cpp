@@ -2,6 +2,14 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
+//
+// Version: 1.0.1
+// Revision date: 2026-07-17
+// Author/Generator: GPT-5.6 Sol
+// Last revised by: GPT-5.6 Sol
+// Change history:
+// - 1.0.0 (2026-07-17): Added multi-group listening user experience.
+// - 1.0.1 (2026-07-17): Included QStatusBar to fix incomplete-type compilation errors.
 
 #include "MainWindow.h"
 
@@ -81,6 +89,7 @@
 #include <QtWidgets/QInputDialog>
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QScrollBar>
+#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolTip>
 #include <QtWidgets/QWhatsThis>
 
