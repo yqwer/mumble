@@ -3,13 +3,14 @@
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
 //
-// Version: 1.0.1
+// Version: 1.0.2
 // Revision date: 2026-07-17
 // Author/Generator: GPT-5.6 Sol
 // Last revised by: GPT-5.6 Sol
 // Change history:
 // - 1.0.0 (2026-07-17): Added multi-group listening user experience.
 // - 1.0.1 (2026-07-17): Included QStatusBar to fix incomplete-type compilation errors.
+// - 1.0.2 (2026-07-17): Applied the repository's clang-format 10 style.
 
 #include "MainWindow.h"
 
@@ -515,12 +516,10 @@ void MainWindow::setupGui() {
 	QObject::connect(Global::get().channelListenerManager.get(), &ChannelListenerManager::localVolumeAdjustmentsChanged,
 					 pmModel, &UserModel::on_channelListenerLocalVolumeAdjustmentChanged);
 	QObject::connect(pmModel, &UserModel::userMoved, this, &MainWindow::on_user_moved);
-	QObject::connect(this, &MainWindow::userAddedChannelListener, this, [this](ClientUser *, Channel *) {
-		updateVoiceScopeStatus();
-	});
-	QObject::connect(this, &MainWindow::userRemovedChannelListener, this, [this](ClientUser *, Channel *) {
-		updateVoiceScopeStatus();
-	});
+	QObject::connect(this, &MainWindow::userAddedChannelListener, this,
+					 [this](ClientUser *, Channel *) { updateVoiceScopeStatus(); });
+	QObject::connect(this, &MainWindow::userRemovedChannelListener, this,
+					 [this](ClientUser *, Channel *) { updateVoiceScopeStatus(); });
 	QObject::connect(this, &MainWindow::serverSynchronized, this, &MainWindow::updateVoiceScopeStatus);
 
 	statusBar()->showMessage(tr("Speak → current channel only · Listen → multi-group (Channel Listeners)"));

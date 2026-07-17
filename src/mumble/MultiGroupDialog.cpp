@@ -3,24 +3,25 @@
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
 //
-// 版本号: 1.0.2
+// 版本号: 1.0.3
 // 修订日期: 2026-07-17
-// 作者/生成者: Auto (Composer)
-// 最后修订人: Auto (Composer)
+// 作者/生成者: GPT-5.6 Sol
+// 最后修订人: GPT-5.6 Sol
 // 变更说明:
 //   - 1.0.0 (2026-07-17): 初版。多群组（Channel Listener）管理对话框实现。
 //   - 1.0.1 (2026-07-17): 合入 yqwer/mumble 最新 master（约 1.7.x）时同步保留。
 //   - 1.0.2 (2026-07-17): 适配最新 API：Channel::ROOT_ID → Mumble::ROOT_CHANNEL_ID。
+//   - 1.0.3 (2026-07-17): 使用仓库要求的 clang-format 10 格式化 include 顺序。
 
 #include "MultiGroupDialog.h"
 
 #include "Channel.h"
 #include "ChannelListenerManager.h"
 #include "ClientUser.h"
-#include "Global.h"
 #include "MumbleConstants.h"
 #include "ServerHandler.h"
 #include "Version.h"
+#include "Global.h"
 
 #include <QtGui/QShowEvent>
 #include <QtWidgets/QListWidgetItem>
